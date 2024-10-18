@@ -1,6 +1,6 @@
 <?php
 require_once 'vendor/setasign/fpdf/fpdf.php'; // Update this line if FPDF is in the root directory
-require_once 'classes/Database.php';
+require_once 'config/Database.php';
 require_once 'classes/User.php';
 
 // Create database connection

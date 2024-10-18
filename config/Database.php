@@ -1,5 +1,4 @@
 <?php
-// classes/Database.php
 class Database {
     private $host = "localhost";
     private $db_name = "smusertest1";

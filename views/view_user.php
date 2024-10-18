@@ -1,5 +1,5 @@
 <?php
-include_once '../classes/Database.php'; // Path to your database connection file
+include_once '../config/Database.php'; // Path to your database connection file
 include_once '../classes/User.php';  // Path to your User class
 
 $database = new Database();
