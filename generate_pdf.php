@@ -3,7 +3,6 @@ require_once 'vendor/setasign/fpdf/fpdf.php'; // Update this line if FPDF is in 
 require_once 'classes/Database.php';
 require_once 'classes/User.php';
 
-
 // Create database connection
 $database = new Database();
 $db = $database->getConnection();
@@ -22,19 +21,19 @@ $pdf->Ln(10);
 
 // Table header
 $pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(30, 10, 'User ID', 1);
-$pdf->Cell(60, 10, 'Username', 1);
-$pdf->Cell(60, 10, 'Full Name', 1);
-$pdf->Cell(60, 10, 'Email', 1);
+$pdf->Cell(30, 10, 'User ID', 1, 0, 'C'); // Align header center
+$pdf->Cell(50, 10, 'Username', 1, 0, 'C'); // Align header center
+$pdf->Cell(60, 10, 'Full Name', 1, 0, 'C'); // Align header center
+$pdf->Cell(50, 10, 'Email', 1, 0, 'C'); // Align header center
 $pdf->Ln();
 
 // Table content
 $pdf->SetFont('Arial', '', 12);
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $pdf->Cell(30, 10, htmlspecialchars($row['USER_ID']), 1);
-    $pdf->Cell(60, 10, htmlspecialchars($row['USERNAME']), 1);
+    $pdf->Cell(50, 10, htmlspecialchars($row['USERNAME']), 1);
     $pdf->Cell(60, 10, htmlspecialchars($row['FULL_NAME']), 1);
-    $pdf->Cell(60, 10, htmlspecialchars($row['EMAIL']), 1);
+    $pdf->Cell(50, 10, htmlspecialchars($row['EMAIL']), 1);
     $pdf->Ln();
 }
 
